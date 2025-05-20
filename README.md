@@ -1,70 +1,132 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🧑‍💻 React 게시판 웹사이트 만들기 메뉴얼
 
-## Available Scripts
+> 누구나 따라할 수 있도록 상세하게 설명된 안내서입니다. `board.zip` 안의 구조를 기준으로 설명합니다.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📦 1. 개발 환경 준비
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 💻 필수 설치
+- [Node.js](https://nodejs.org/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Google Chrome](https://www.google.com/chrome/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📁 프로젝트 생성
 
-### `npm test`
+```bash
+npx create-react-app board
+cd board
+npm install react-router-dom
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🗂️ 2. 폴더 구조 설명
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── App.js                   # 전체 앱 라우팅 및 구성
+├── index.js                # 앱 시작점
+├── components/             # UI 컴포넌트
+│   ├── Header.jsx
+│   ├── LoginModal.jsx
+│   ├── RegisterModal.jsx
+│   ├── SearchModal.jsx
+│   └── CategoryManagementModal.jsx
+├── pages/
+│   └── MainBoard.jsx        # 메인 게시판 페이지
+├── context/                # 상태 관리
+│   ├── AuthContext.jsx
+│   ├── PostContext.jsx
+│   └── CategoryContext.jsx
+├── styles/
+│   ├── Header.css
+│   ├── Modal.css
+│   └── MainBoard.css
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 💡 3. 주요 기능 요약
 
-### `npm run eject`
+### ✅ `Header.jsx`
+- 로고 / 카테고리 / 더보기 메뉴 / 검색 / 글쓰기 / 로그인 표시
+- `admin` 계정은 카테고리 관리(⚙️) 버튼 표시됨
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 📝 `MainBoard.jsx`
+- 게시글 목록 보여주기
+- 최신순/좋아요순 정렬 버튼
+- 카테고리별 필터 기능
+- 페이지네이션 포함
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🔐 `AuthContext.jsx`
+- 로그인/회원가입/로그아웃 관리
+- `admin` 계정은 특별한 권한 부여됨
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 📁 `CategoryContext.jsx`
+- 카테고리 추가/수정/삭제/순서 변경
+- 관리자만 사용 가능
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### ✍️ `PostContext.jsx`
+- 게시글 작성, 좋아요, 댓글 수 등 관리
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎨 4. 스타일 설명 (CSS)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `MainBoard.css`
+- `.card`로 게시글을 카드 형태로 보여줌
+- `.category-filter`로 카테고리 버튼 생성
+- 반응형 지원 (`@media` 쿼리 포함)
 
-### Code Splitting
+### `Header.css`
+- 상단바 고정
+- 메뉴 우측 버튼 줄바꿈 없이 유지
+- 드롭다운(더보기 버튼)은 작은 화면에서도 정상 동작
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🚀 5. 실행 방법
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+> 실행하면 브라우저에서 `http://localhost:3000`으로 열립니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🧪 6. 체크리스트
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [ ] 로그인, 로그아웃 잘 되는가?
+- [ ] 게시글 정렬이 최신순/좋아요순으로 바뀌는가?
+- [ ] 카테고리가 상단 3개까지만 보이고, 나머지는 더보기로 나오는가?
+- [ ] 관리자(admin)만 ⚙️ 버튼 보이는가?
+- [ ] 검색 기능이 동작하는가?
+- [ ] 반응형으로 화면이 줄어도 메뉴가 한 줄에 유지되는가?
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔑 관리자 계정 정보
 
-### `npm run build` fails to minify
+```
+ID: admin
+PW: admin1234
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 💬 도움말 명령어
+
+필요한 부분만 다시 보고 싶다면 아래처럼 요청하세요:
+
+- `AuthContext 전체 코드`
+- `MainBoard 정렬 추가 설명`
+- `카테고리 드롭다운 동작 방식`
+- `로그인 모달 구현`
+- `좋아요 누르기 기능`
+
+---
+
+**이 매뉴얼을 그대로 따라 하면 완성도 높은 게시판을 만들 수 있습니다!**

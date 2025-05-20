@@ -1,0 +1,63 @@
+/* src/styles/Home.css */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .category-tabs {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .category-tab {
+    padding: 8px 16px;
+    margin-right: 8px;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  
+  .category-tab:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .category-tab.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .post-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .post-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .no-posts {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+    font-style: italic;
+  }

@@ -1,0 +1,203 @@
+/* 📄 MainBoard.css - 메인 보드 스타일 정의 */
+
+/* 🧱 전체 컨테이너 레이아웃 */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px); /* 헤더 제외한 전체 높이 */
+}
+
+/* 📢 배너 스타일 */
+.banner {
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 📦 게시판 전체 컨테이너 */
+.board-container {
+  width: 100%;
+  max-width: 1200px;  /* 최대 너비 설정 */
+  margin: 0 auto;     /* 가운데 정렬 */
+  padding: 0 24px;    /* 좌우 여백 */
+  padding-top: 40px;  /* 상단 여백 */
+}
+
+/* 🧭 헤더 (제목 + 필터 영역) */
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* 🗂 게시판 제목 */
+.board-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* 🔽 카테고리 필터 버튼 묶음 */
+.category-filter {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 🏷 각 카테고리 필터 버튼 */
+.category-btn {
+  background: #f8f9fa;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* 🟦 선택된 필터 버튼 */
+.category-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+/* 📄 게시글 카드 박스 */
+.card {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* 📎 게시글 클릭 영역 전체 감싸기 */
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.post-link:hover .card {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔖 게시글 상단 카테고리 표시 */
+.category {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* 📝 게시글 제목 */
+.title {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* 🧾 게시글 본문 요약 */
+.content-preview {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* 🧑‍🤝‍🧑 작성자, 좋아요, 날짜 정보 */
+.meta {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ❤️ 좋아요 버튼 */
+.like-btn {
+  background: none;
+  border: none;
+  color: #ff5252;
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
+}
+
+/* ⏳ 로딩 메시지 */
+.loading {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+
+/* ❌ 게시글 없을 때 */
+.no-posts {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  color: #666;
+}
+
+/* 🔢 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* 🔘 각 페이지 버튼 */
+.page-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* 🔘 현재 페이지 강조 */
+.page-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* 🖱️ 호버 효과 */
+.page-btn:hover:not(.active) {
+  background: #f8f9fa;
+}
+
+/* 📱 반응형 (모바일 화면) */
+@media (max-width: 768px) {
+  .board-header {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+
+  .category-filter {
+    margin-top: 8px;
+  }
+}

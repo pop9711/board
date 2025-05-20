@@ -1,0 +1,154 @@
+/* src/styles/CategoryModal.css */
+.category-modal {
+    width: 500px;
+    max-width: 90vw;
+  }
+  
+  .category-list {
+    max-height: 350px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+  
+  .category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: grab;
+    background-color: white;
+    transition: background-color 0.2s;
+  }
+  
+  .category-item:last-child {
+    border-bottom: none;
+  }
+  
+  .category-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .category-item.dragging {
+    opacity: 0.5;
+    background-color: #f0f0f0;
+  }
+  
+  .category-name {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .category-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .btn-edit,
+  .btn-delete,
+  .btn-save,
+  .btn-cancel {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-edit {
+    color: #007bff;
+  }
+  
+  .btn-edit:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  
+  .btn-delete {
+    color: #dc3545;
+  }
+  
+  .btn-delete:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+  }
+  
+  .btn-save {
+    color: #28a745;
+    font-weight: 500;
+  }
+  
+  .btn-save:hover {
+    background-color: rgba(40, 167, 69, 0.1);
+  }
+  
+  .btn-cancel {
+    color: #6c757d;
+  }
+  
+  .btn-cancel:hover {
+    background-color: rgba(108, 117, 125, 0.1);
+  }
+  
+  .edit-form {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .edit-form input {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .add-category-form {
+    display: flex;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+  
+  .add-category-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .btn-add {
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-add:hover:not(:disabled) {
+    background: #218838;
+  }
+  
+  .btn-add:disabled {
+    background: #a8d5b5;
+    cursor: not-allowed;
+  }
+  
+  .category-tips {
+    margin: 16px 0;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #6c757d;
+  }
+  
+  .category-tips p {
+    margin: 4px 0;
+  }

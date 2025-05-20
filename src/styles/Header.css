@@ -1,0 +1,177 @@
+/* ==========================
+   Header Layout & Navigation
+   ========================== */
+
+/* 헤더 전체 영역 */
+.header {
+  background: #ffffff; /* 흰 배경 */
+  display: flex; /* 플렉스 박스로 정렬 */
+  justify-content: space-between; /* 좌우 공간 분배 */
+  align-items: center; /* 세로 중앙 정렬 */
+  padding: 16px 24px; /* 내부 여백 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 그림자 효과 */
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+  position: relative;
+}
+
+/* 좌측 로고 텍스트 */
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ==========================
+   Navigation Links (카테고리)
+   ========================== */
+
+/* 카테고리 링크 영역 */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-left: 16px;
+  flex-wrap: nowrap; /* ❗ 상단 메뉴 줄바꿈 방지 */
+}
+
+/* 개별 카테고리 링크 */
+.nav-link {
+  padding: 6px 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* 호버 효과 */
+.nav-link:hover {
+  background-color: #f0f0f0;
+}
+
+/* 활성화된 링크 스타일 */
+.nav-link.active {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+
+/* ➕ 더보기 드롭다운 버튼 */
+.nav-dropdown {
+  position: relative;
+}
+
+/* 더보기 버튼 */
+.more-btn {
+  padding: 6px 10px;
+  border: none;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.more-btn:hover {
+  background-color: #ddd;
+}
+
+/* 더보기 메뉴 드롭다운 */
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  min-width: 120px;
+}
+.dropdown-item {
+  padding: 8px 12px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+.dropdown-item:hover {
+  background-color: #f2f2f2;
+}
+
+/* ==========================
+   User Menu (오른쪽 버튼)
+   ========================== */
+
+/* 사용자 메뉴 우측 영역 */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  flex-wrap: nowrap; /* ❗ 줄바꿈 방지 */
+}
+
+/* 사용자명 텍스트 */
+.user-name {
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+
+/* 공통 버튼 */
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+/* 검색 버튼 */
+.btn-search {
+  background: #17a2b8;
+  color: white;
+}
+.btn-search:hover {
+  background: #138496;
+}
+.btn-search::before {
+  content: "🔍";
+  margin-right: 4px;
+}
+
+/* 글쓰기 버튼 */
+.btn-write {
+  background: #28a745;
+  color: white;
+}
+.btn-write:hover {
+  background: #218838;
+}
+
+/* 로그인 버튼 */
+.btn-login {
+  background: #007bff;
+  color: white;
+}
+.btn-login:hover {
+  background: #0069d9;
+}
+
+/* 로그아웃 버튼 */
+.btn-logout {
+  background: #f8f9fa;
+  color: #333;
+}
+.btn-logout:hover {
+  background: #e2e6ea;
+}
+
+/* 관리자용 설정 버튼 */
+.btn-manage {
+  background: rebeccapurple;
+  color: white;
+}
+.btn-manage:hover {
+  background: indigo;
+}

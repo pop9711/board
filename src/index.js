@@ -1,17 +1,17 @@
+// src/index.js 수정
+// React 애플리케이션의 진입점
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+// 스타일 임포트 경로 수정
+import './index.css';  // 경로 수정
 
+// 루트 요소 생성
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// 애플리케이션 렌더링
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
